@@ -17,14 +17,14 @@ pipeline {
             emailext(
                 subject: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: "Build was successful!\nView details: ${env.BUILD_URL}",
-                to: "2k21csbs48@kiot.ac.in,2k21csbs38@kiot.ac.in,2k21csbs11@kiot.ac.in,ssowmiyasaravananr@gmail.com"
+                to: "2k21csbs48@kiot.ac.in","2k21csbs38@kiot.ac.in","2k21csbs11@kiot.ac.in","ssowmiyasaravananr@gmail.com"
             )
         }
         failure {
             emailext(
                 subject: "Build FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: "Build failed!\nCheck logs: ${env.BUILD_URL}",
-                to: "2k21csbs48@kiot.ac.in,2k21csbs38@kiot.ac.in,2k21csbs11@kiot.ac.in,ssowmiyasaravananr@gmail.com"
+                to: "2k21csbs48@kiot.ac.in","2k21csbs38@kiot.ac.in","2k21csbs11@kiot.ac.in","ssowmiyasaravananr@gmail.com"
             )
         }
     }
