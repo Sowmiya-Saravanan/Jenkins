@@ -10,12 +10,12 @@ public class DemoController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello, Jenkins!";
+        return "Hello, Somwiya!";
     }
 
     @GetMapping("/goodbye")
     public String goodbye() {
-        return "Goodbye, Jenkins!";
+        return "Goodbye, Sowmiya!";
     }
 }
 
