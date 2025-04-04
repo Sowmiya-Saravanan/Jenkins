@@ -21,7 +21,7 @@ pipeline {
         stage('Push Image to DockerHub') {
             steps {
                 script {
-                    bat 'docker login '
+                    bat 'docker login'
                     bat 'docker push sowmiya11/sowmiya'
 }
                 }
