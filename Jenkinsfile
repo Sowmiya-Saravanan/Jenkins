@@ -4,6 +4,7 @@ pipeline {
         jdk 'JDK 17'
         maven 'Maven 3'
     }
+    }
         stage('Build Maven') {
             steps {
                 bat 'mvn clean install'
@@ -18,13 +19,11 @@ pipeline {
             }
         }
 
-        stage('Push Image to DockerHub') {
-            steps {
-                script {
-                    bat 'docker login'
-                    bat 'docker push sowmiya11/sowmiya'
+stage('Push Image to DockerHub') {
+    steps {
+        script {
+            bat 'docker login'
+            bat 'docker push sowmiya11/sowmiya'
+        }
+    }
 }
-                }
-            }
-        
-    }
