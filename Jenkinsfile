@@ -36,15 +36,15 @@ pipeline {
             steps {
                 script {
                     withCredentials([file(credentialsId: 'KUBE_CONFIG', variable: 'KUBE_CONFIG')]) {
-                        // Set the KUBECONFIG environment variable for kubectl to use
-                        env.KUBECONFIG = KUBE_CONFIG
-                        
-                        // Apply the Kubernetes deployment YAML file
-                        bat "kubectl apply -f myapp-deployment.yaml"
-                        
-                        // Restart deployment to use the latest Docker image
-                        bat "kubectl set image deployment/${K8S_DEPLOYMENT_NAME} myapp-app=${DOCKER_IMAGE}:latest -n ${K8S_NAMESPACE}"
-                    }
+                // Set the KUBECONFIG environment variable for kubectl to use
+                env.KUBECONFIG = KUBE_CONFIG
+                
+                // Apply the Kubernetes deployment YAML file
+                bat "kubectl apply -f myapp-deployment.yaml"
+                
+                // Restart deployment to use the latest Docker image
+                bat "kubectl set image deployment/myapp-deployment myapp-container=${DOCKER_IMAGE}:latest -n ${K8S_NAMESPACE}"
+             }
                 }
             }
         }
